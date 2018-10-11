@@ -1,0 +1,18 @@
+@startuml
+participant Navigateur
+participant Vue
+participant Contrôleur
+participant Modèle
+participant SGBD
+
+Navigateur -> Contrôleur: GET produit.php\n avec id_produit
+Contrôleur -> Contrôleur: vérifie que id_produit\n est présent et entier
+Contrôleur -> Modèle: (modele/produit_modele.php)\n getById($id_produit)
+Modèle -> SGBD: SELECT * FROM produit\n WHERE id_produit=...
+Modèle -> Contrôleur: 1 ligne ou null\n si pas trouvé
+Contrôleur -> Modèle: (modele/produit_modele.php)\n getEncheresById($id_produit)
+Modèle -> SGBD: SELECT * FROM enchere\n WHERE id_produit=...
+Modèle -> Contrôleur: tableau de lignes
+Contrôleur -> Vue: (vue/produit_vue.php)
+Vue -> Navigateur: page complète
+@enduml

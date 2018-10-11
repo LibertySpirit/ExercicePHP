@@ -1,0 +1,5 @@
+@startuml
+Navigateur -> Contrôleur: GET produits.php\n avec id_categorie, prix_actuel, date_limite
+Contrôleur -> Navigateur : "Vous avez demandé ..."
+
+@enduml

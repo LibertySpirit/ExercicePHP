@@ -1,0 +1,11 @@
+vendeur.php et fichiers associés (page vendeur)
+
+Verifier dans le controleur que id_vendeur est présent et entier, et prendre en charge dans la vue
+
+Ecrire la requete SQL pour trouver le vendeur dans mysqlworkbench, en vérifiant son résultat
+
+Intégrer la requete dans le modèle, appeler le modèle dans le contrôleur, et afficher la ligne dans la vue
+
+Ecrire la requete SQL pour trouver les produits vendus par le vendeur, dans workbench
+
+Intégrer dans le PHP
