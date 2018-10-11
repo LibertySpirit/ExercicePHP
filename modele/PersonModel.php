@@ -1,6 +1,6 @@
 <?php
 
-require_once("DemoDB.php");
+require_once("DB.php");
 
 /** Access to the person table.
  * Put here the methods like getBySomeCriteriaSEarch */
@@ -12,8 +12,8 @@ class PersonModel {
      * @return associative_array table row
      */
     public static function get($personId) {
-        $db = DemoDB::getConnection();
-        $sql = "SELECT person_id, name
+        $db = DB::getConnection();
+        $sql = "SELECT *
               FROM person
               WHERE person_id = :person_id";
         $stmt = $db->prepare($sql);
@@ -23,7 +23,7 @@ class PersonModel {
     }
 
     public static function getByLoginPassword($login, $password) {
-        $db = DemoDB::getConnection();
+        $db = DB::getConnection();
         $sql = "SELECT person_id, name, password
             FROM person
             WHERE name = :name AND password = :password";
