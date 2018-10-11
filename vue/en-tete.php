@@ -1,13 +1,13 @@
-<?php
-function display_form($user, $login, $msg) {
-	?>
-	<!DOCTYPE html>
+<!DOCTYPE html>
 	<html>
 		<head>
 			<link rel="stylesheet" type="text/css" href="main.css"/>
 		</head>
 		<body class="flex-center">
 		<header>
+<?php
+function display_form($user, $login, $msg) {
+?>
 			<form method="POST">
 				<?php
 				if ($user != null) {
