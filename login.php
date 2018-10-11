@@ -1,4 +1,6 @@
 <?php
+include_once("vue/en-tete.php");
+
 /* Connect or disconnect a user.
  * The user interface is minimal.
  */
@@ -42,3 +44,5 @@ function do_post() {
 	}
 	display_form($user, $login, $msg);
 }
+
+// INCLURE VUE DE LOGIN ???
