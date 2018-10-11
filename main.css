@@ -27,3 +27,7 @@ td {
     flex-flow: column;
     justify-content: center;
 }
+
+.error {
+   color: red;
+}
