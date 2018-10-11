@@ -30,7 +30,7 @@ class PersonModel {
 
 	public static function getByLoginPassword($login, $password) {
 		$db = DB::getConnection();
-		$sql = "SELECT id_participant, email, password
+		$sql = "SELECT id_participant, nom, email, password
 			FROM participant
 			WHERE email = :email AND password = :password";
 		$stmt = $db->prepare($sql);

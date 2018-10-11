@@ -1,44 +1,49 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<link rel="stylesheet" type="text/css" href="main.css"/>
-	</head>
-	<body class="flex-center">
-<header>Ici le menu commun à toutes les pages</header>
-<hr/>
 <?php
 function display_form($user, $login, $msg) {
 	?>
+	<!DOCTYPE html>
 	<html>
 		<head>
-			<style>
-				.error {
-					color: red;
-				}
-			</style>
+			<link rel="stylesheet" type="text/css" href="main.css"/>
 		</head>
-		<body>
+		<body class="flex-center">
+		<header>
 			<form method="POST">
 				<?php
 				if ($user != null) {
 					?>
 					<button type="submit" name="action" value="disconnect">Disconnect
-						<?= $user["email"] ?></button>
+						<?= $user["nom"] ?></button>
 					<?php
 				} else {
 					?>
-					Login: <input type="text" name="email" value="<?= $login ?>"/>
-					Password: <input type = "password" name = "password"/>
-					<button type="submit">Connect</button>
-					<?php
-					if ($msg != null) {
-					?>	
-					<span class="error"><?= $msg ?></span>
+					<div id="connect">
+						Login: <input type="text" name="email" value="<?= $login ?>"/>
+						Password: <input type = "password" name = "password"/>
+						<button type="submit">Connect</button>
+						<?php
+						if ($msg != null) {
+						?>	
+						<span class="error"><?= $msg ?></span>
+					</div>
 					<?php
 					}
 				}
 				?>
 			</form>
+			<nav>
+				<ul>
+					<li><a href="index.php" target="_blank" rel="noopener noreferrer">Accueil</a></li>
+					<?php 
+						if ($user != null) { ?>
+							<li><a href="vendeur.php?id_vendeur=<?= $_SESSION['user']['id_participant'] ?>" target="_blank" rel="noopener noreferrer">Page de profile</a></li>
+							<li><a href="ajouter_produit.php" target="_blank" rel="noopener noreferrer">Ajouter un produit</a></li>
+						<?php
+						}
+					?>
+				</ul>
+			</nav>
+			</header>
 		</body>
 	</html>
 	<?php
