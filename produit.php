@@ -24,7 +24,7 @@ else {
 	// Appel au modele
 	require_once("modele/produit_modele.php");
 	// Recuperer le produit de id demande
-	$produit = get($id_produit);
+	$produit = getProduit($id_produit);
 	if ($produit != null) {
 		$encheres = getEncheresByIdProduit($id_produit);
 	}

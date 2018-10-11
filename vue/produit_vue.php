@@ -1,16 +1,8 @@
 <?php
 // Vue de la page du produit
 // Données : $produit, $encheres
-?>
-<!DOCTYPE html>
-<html>
-	<head>
-		<link rel="stylesheet" type="text/css" href="static/style.css"/>
-	</head>
-	<body>
-<?php
-// Afficher l'en-tete commune a toutes les pages
 require_once("en-tete.php");
+
 if ($initError != null) {
 ?>
 		<h1><?= $initError ?></h1>

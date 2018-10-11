@@ -7,7 +7,7 @@ class DB {
 		$db = "encheres";
 		$dsn = "mysql:dbname=$db;host=localhost;charset=utf8";
 		$user = "root";
-		$password = ""; // root avec MAMP et XAMPP
+		$password = "ERT123vbn"; // root avec MAMP et XAMPP
 		// Get a DB connection with PDO library
 		$bdd = new PDO($dsn, $user, $password);
 		// Set communication in utf-8
