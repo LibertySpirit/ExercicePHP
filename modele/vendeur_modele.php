@@ -2,7 +2,7 @@
 require_once("DB.php");
 
 class PersonModel {
-	function getParticipant($id_vendeur) {
+	public static function getParticipant($id_vendeur) {
 		$db = DB::getConnection();
 		$sql = "SELECT *
 			FROM participant

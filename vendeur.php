@@ -11,9 +11,9 @@ if ($id_vendeur === null // pas de valeur
 else {
 	require_once("modele/vendeur_modele.php");
 	// Recuperer le produit de id demande
-    $vendeur = getParticipant($id_vendeur);
+    $vendeur = PersonModel::getParticipant($id_vendeur);
 	if ($vendeur != null) {
-        $produitVendus = getProduitByIdVendeur($id_vendeur);
+        $produitVendus = PersonModel::getProduitByIdVendeur($id_vendeur);
 	}
 }
 // Appel a la vue
