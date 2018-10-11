@@ -9,6 +9,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     do_post();
 }
 
+
+var_dump($_POST);
 // Controler for get
 function do_get() {
 	$user = array_key_exists("user", $_SESSION) ? $_SESSION["user"] : null;
@@ -34,11 +36,11 @@ function display_form($user, $login, $msg) {
 				if ($user != null) {
 					?>
 					<button type="submit" name="action" value="disconnect">Disconnect
-						<?= $user["name"] ?></button>
+						<?= $user["email"] ?></button>
 					<?php
 				} else {
 					?>
-					Login: <input type="text" name="login" value="<?= $login ?>"/>
+					Login: <input type="text" name="email" value="<?= $login ?>"/>
 					Password: <input type = "password" name = "password"/>
 					<button type="submit">Connect</button>
 					<?php
@@ -60,12 +62,12 @@ function do_post() {
 	$user = null;
 	$login = null;
 	$msg = null;
-	require_once "PersonModel.php";
+	require_once "modele/vendeur_modele.php";
 	if (array_key_exists("action", $_POST) && $_POST["action"] == "disconnect") {
 		$_SESSION = array();
 		session_destroy();
 	} else {
-		$login = $_POST["login"];
+		$login = $_POST["email"];
 		$password = $_POST["password"];
 		if (empty($login) || empty($password)) {
 			$msg = "fields must be filled";
